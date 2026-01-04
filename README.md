@@ -1,77 +1,62 @@
-# 🏥 KPPMCH Service
-
-**KPPMCH Service** is a comprehensive **hospital service web application** developed for  
-**Kamphaeng Phet Municipality Community Hospital (KPPMCH)**.  
-
-The system is designed to provide the public with **up-to-date information** about hospital services,  
-doctor schedules, telemedicine appointments, health-related resources, and contact information.  
-By making these services available online, KPPMCH aims to improve healthcare accessibility,  
-reduce waiting times, and enhance communication between patients and hospital staff.  
-
-This project was developed with a focus on **speed, accessibility, and user-friendly design**  
-using modern web technologies such as **Next.js, Tailwind CSS, and Vercel**.  
+# KPPMCH Service Hub
+**Centralized Hospital Service and Resource Portal**
 
 ---
 
-## 🌐 Live Demo
-👉 [kppmch-service.vercel.app](https://kppmch-service.vercel.app)
-
-The live demo showcases the actual deployment of the system on Vercel.  
-Users can explore hospital information, service pages, and useful external links directly.  
-
----
-
-## 🖼️ Preview
-![App Preview](https://kppmch-service.vercel.app/og-image.png)  
-*(Optional: replace with a real screenshot of the homepage, service schedule, or telemedicine page.)*  
+### Project Specification
+| Category | Detail |
+| :--- | :--- |
+| **Project Name** | KPPMCH Service Hub |
+| **Organization** | Kamphaeng Phet Municipality Community Hospital (KPPMCH) |
+| **Primary Framework** | Next.js |
+| **Deployment Platform** | Vercel |
+| **Repository URL** | [github.com/Ratchanon2318/kppmch-service-hub](https://github.com/Ratchanon2318/kppmch-service-hub) |
 
 ---
 
-## ✨ Key Features
-
-- **Homepage** – Overview of the hospital, including vision, mission, and general information  
-- **About Us** – Information about the hospital’s history and organizational structure  
-- **Service Schedules** – Clear schedule for medical services such as General Practice,  
-  Chinese Medicine, and Thai Traditional Medicine  
-- **Telemedicine Registration** – Quick link for patients to book online consultations  
-- **Maternal Clinic & Youth Counseling** – Access to specific programs and services  
-- **External Links** – NHSO Rights Verification, Municipality Website, and other resources  
-- **Contact Information** – Hospital address, phone, and email with clear layout  
-- **Responsive Design** – Works seamlessly across desktop, tablet, and mobile devices  
+### Technical Infrastructure
+| Component | Technology | Description |
+| :--- | :--- | :--- |
+| **Core Engine** | Next.js | High-performance React framework for server-side capabilities |
+| **Architecture** | Centralized Portal | Unified access point for disparate hospital services |
+| **Styling Strategy** | Tailwind CSS / CSS Modules | Modular and responsive design system |
+| **Deployment** | Vercel CI/CD | Automatic build and deployment for production environment |
+| **Resource Management** | Static & Dynamic | Optimized handling of medical resources and schedules |
 
 ---
 
-## ⚡ Tech Stack
-
-This project was built with a **modern frontend framework** and hosting platform:
-
-- [Next.js](https://nextjs.org/) – React framework for building scalable, SEO-friendly web applications  
-- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for fast and consistent UI development  
-- [Vercel](https://vercel.com/) – Hosting and deployment platform for modern web applications  
-
-Additional practices include:  
-- Responsive design for cross-device compatibility  
-- SEO optimization for better discoverability  
-- Clean code structure for easy maintenance  
+### Core Functional Modules
+| Module | Description |
+| :--- | :--- |
+| **Service Integration** | Centralized directory for all medical and digital services |
+| **Resource Repository** | Structured access to public health information and resources |
+| **Schedule Viewer** | Real-time display of medical staff and department availability |
+| **Responsive Navigation** | Mobile-first design for patient accessibility across devices |
 
 ---
 
-## 📦 Installation
+### System Implementation
+| Step | Action | Command |
+| :--- | :--- | :--- |
+| 1 | **Clone Repository** | `git clone https://github.com/Ratchanon2318/kppmch-service-hub.git` |
+| 2 | **Install Dependencies** | `npm install` |
+| 3 | **Production Build** | `npm run build` |
+| 4 | **Execute Development** | `npm run dev` |
 
-You can clone and run this project locally in a few simple steps:
+---
 
-```bash
-# 1. Clone repository
-git clone https://gitlab.com/USERNAME/kppmch-service.git
+### License Specification
+| Attribute | Detail |
+| :--- | :--- |
+| **License Type** | MIT License |
+| **Copyright Holder** | Ratchanon Noknoy |
+| **Notice** | Standard terms for liability limitation and permission grant |
 
-# 2. Navigate to project folder
-cd kppmch-service
+---
 
-# 3. Install dependencies
-npm install
-
-# 4. Run in development mode
-npm run dev
-
-# 5. Open in browser
-http://localhost:3000
+### Professional Contact
+| Channel | Detail |
+| :--- | :--- |
+| **Software Engineer** | Ratchanon Noknoy |
+| **LinkedIn** | [linkedin.com/in/ratchanon-noknoy](https://www.linkedin.com/in/ratchanon-noknoy/) |
+| **Portfolio** | [ratchanonnoknoy.vercel.app](https://ratchanonnoknoy.vercel.app/) |
