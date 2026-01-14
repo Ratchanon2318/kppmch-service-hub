@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import styles from './page.module.css'; // Import dedicated styles for About page
+import styles from '../styles/about.module.css'; // Import dedicated styles for About page
 
 // --- Component หลักสำหรับหน้า "เกี่ยวกับเรา" ---
 export default function AboutPage() {

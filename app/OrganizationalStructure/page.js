@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './page.module.css'; // Import dedicated styles
+import styles from '../styles/OrganizationalStructure.module.css'; // Import dedicated styles
 
 /**
  * OrgCard Component
@@ -79,7 +79,7 @@ export default function OrganizationChartPage() {
           {/* Level 2: Division Director */}
           <div className={styles.orgLevel}>
             <OrgCard 
-              name="นส.พิชญา หงษ์สุตะเมธี" 
+              name="นางสาวพิชญา หงษ์สุตะเมธี" 
               title="หัวหน้าฝ่ายบริหารงานทั่วไป (รักษาราชการแทน ผอ.กองสาธารณสุขฯ)" 
               imageUrl="/executives/director-1.png"
               customWidthClass={styles.w72} 

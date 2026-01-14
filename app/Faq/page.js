@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './page.module.css'; 
+import styles from '../styles/faq.module.css'; 
 
 // --- Component หลักสำหรับหน้า "คำถามที่พบบ่อย" ---
 export default function Page() {

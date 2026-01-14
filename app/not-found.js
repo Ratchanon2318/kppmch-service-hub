@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './not-found.module.css';
+import styles from './styles/not-found.module.css';
  
 // --- Component สำหรับแสดงหน้า 404 Not Found ---
 // Next.js จะแสดงหน้านี้โดยอัตโนมัติเมื่อไม่พบ URL ที่ร้องขอ

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import styles from './LineAd.module.css';
+import styles from '../styles/LineAd.module.css';
 
 // --- Component: FloatingLineAd ---
 // แสดงแบนเนอร์โฆษณา LINE OA แบบลอย

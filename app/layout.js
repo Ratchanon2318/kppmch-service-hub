@@ -1,4 +1,4 @@
-import './globals.css'
+import './styles/globals.css'
 import NavBar from './components/Navbar'
 // นำเข้า Component และฟอนต์ที่จำเป็น
 import Script from 'next/script';
@@ -14,17 +14,46 @@ const sarabun = Sarabun({
   display: 'swap',
 });
 
+// --- Viewport Configuration ---
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 // --- Metadata สำหรับ SEO ---
 export const metadata = {
-  title: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร | บริการสุขภาพเพื่อชุมชน',
+  title: {
+    default: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร | บริการสุขภาพเพื่อชุมชน',
+    template: '%s | โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร',
+  },
   metadataBase: new URL('https://kppmch-service.vercel.app/'),
-  description: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร ให้บริการสุขภาพเพื่อชุมชนอย่างครบวงจร ตั้งแต่การตรวจรักษาโรคทั่วไป, แพทย์แผนจีน, แพทย์แผนไทย และบริการสุขภาพอื่นๆ ด้วยทีมแพทย์ผู้เชี่ยวชาญและเทคโนโลยีที่ทันสมัย',
-  keywords: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร, โรงพยาบาลชุมชน, ตารางแพทย์, ตรวจโรคทั่วไป, แพทย์แผนจีน, แพทย์แผนไทย, ฝังเข็ม, กำแพงเพชร',
+  description: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร ให้บริการสุขภาพเพื่อชุมชนอย่างครบวงจร ตรวจรักษาโรคทั่วไป แพทย์แผนจีน แพทย์แผนไทย ฝังเข็ม และบริการสุขภาพอื่นๆ โดยทีมแพทย์ผู้เชี่ยวชาญ',
+  keywords: ['โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร', 'โรงพยาบาลชุมชน', 'ตารางแพทย์', 'ตรวจโรคทั่วไป', 'แพทย์แผนจีน', 'แพทย์แผนไทย', 'ฝังเข็ม', 'กำแพงเพชร', 'คลินิก', 'รักษาโรค', 'สุขภาพชุมชน'],
+  authors: [{ name: 'งานเทคโนโลยีดิจิทัล โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร' }],
   creator: 'งานเทคโนโลยีดิจิทัล โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร',
   publisher: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: '/favicon.ico', // icon
-  
+  },
+  // ยืนยันตัวตนกับ Search Engine (แนะนำให้ใส่เมื่อพร้อม)
+  verification: {
+    google: 'google-site-verification=YOUR_CODE', 
+  },
+  // ระบุ URL หลักเพื่อป้องกันเนื้อหาซ้ำซ้อน (Duplicate Content)
+  alternates: {
+    canonical: '/',
+  },
+  // ระบุพิกัดภูมิศาสตร์ (Local SEO) ช่วยให้คนในพื้นที่ค้นหาเจอได้ง่ายขึ้น
+  other: {
+    'geo.region': 'TH-62', // รหัสจังหวัดกำแพงเพชร
+    'geo.placename': 'Kamphaeng Phet',
+    'geo.position': '16.4833;99.5222', // TODO: แก้ไขเป็นพิกัดจริงของโรงพยาบาล (ละติจูด;ลองจิจูด) เพื่อความแม่นยำสูงสุด
+    'ICBM': '16.4833, 99.5222',
   },
   // การตั้งค่าสำหรับ Search Engine Bots
   robots: {
@@ -33,17 +62,19 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
   // การตั้งค่าสำหรับ Open Graph (แสดงผลเมื่อแชร์ใน Social Media)
   openGraph: {
     title: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร | บริการสุขภาพเพื่อชุมชน',
-    description: 'ค้นหาข้อมูลบริการ, ตารางแพทย์, และข้อมูลติดต่อของโรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร เว็บไซต์อย่างเป็นทางการเพื่อดูแลสุขภาพของคนในชุมชน',
+    description: 'ให้บริการตรวจรักษาโรคทั่วไป แพทย์แผนจีน แพทย์แผนไทย และบริการสุขภาพครบวงจร',
     url: '/', // Path relative to metadataBase (หน้าแรกของเว็บไซต์)
     siteName: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร', // ชื่อของเว็บไซต์',
     images: [
       {
-    
         url: '/og-image.png',
         width: 1200,
         height: 630,
@@ -53,6 +84,13 @@ export const metadata = {
     locale: 'th_TH',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร',
+    description: 'บริการสุขภาพเพื่อชุมชน โดยเทศบาลเมืองกำแพงเพชร',
+    images: ['/og-image.png'],
+  },
+  category: 'health',
 }
 
 // --- JSON-LD Schema สำหรับ SEO (Structured Data) ---
@@ -106,8 +144,6 @@ export default function RootLayout({ children }) {
         <Script id="website-schema" type="application/ld+json">
           {JSON.stringify(websiteSchema)}
         </Script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-        
       </head>
       <body >
         {/* แสดง Components ที่ใช้ร่วมกันทุกหน้า */}
