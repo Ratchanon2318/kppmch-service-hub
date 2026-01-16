@@ -1,62 +1,48 @@
 # KPPMCH Service Hub
 **Centralized Hospital Service and Resource Portal**
 
+[Live Demo](https://kppmch-service.vercel.app/) | [Portfolio](https://ratchanon-portfolio.vercel.app/)
+
 ---
 
 ### Project Specification
 | Category | Detail |
 | :--- | :--- |
-| **Project Name** | KPPMCH Service Hub |
 | **Organization** | Kamphaeng Phet Municipality Community Hospital (KPPMCH) |
-| **Primary Framework** | Next.js |
-| **Deployment Platform** | Vercel |
-| **Repository URL** | [github.com/Ratchanon2318/kppmch-service-hub](https://github.com/Ratchanon2318/kppmch-service-hub) |
+| **Framework** | Next.js (App Router) |
+| **Deployment** | Vercel |
+| **Repository** | [github.com/ratchanon-noknoy2318/hospital-service-hub](https://github.com/ratchanon-noknoy2318/hospital-service-hub) |
 
 ---
 
 ### Technical Infrastructure
 | Component | Technology | Description |
 | :--- | :--- | :--- |
-| **Core Engine** | Next.js | High-performance React framework for server-side capabilities |
-| **Architecture** | Centralized Portal | Unified access point for disparate hospital services |
-| **Styling Strategy** | Tailwind CSS / CSS Modules | Modular and responsive design system |
-| **Deployment** | Vercel CI/CD | Automatic build and deployment for production environment |
-| **Resource Management** | Static & Dynamic | Optimized handling of medical resources and schedules |
+| **Core Engine** | Next.js | Server-side rendering for high performance & SEO |
+| **Styling** | Tailwind CSS | Utility-first responsive design |
+| **CI/CD** | Vercel | Automated deployment pipeline |
+| **Architecture** | Centralized Portal | Unified access point for hospital digital services |
 
 ---
 
 ### Core Functional Modules
-| Module | Description |
-| :--- | :--- |
-| **Service Integration** | Centralized directory for all medical and digital services |
-| **Resource Repository** | Structured access to public health information and resources |
-| **Schedule Viewer** | Real-time display of medical staff and department availability |
-| **Responsive Navigation** | Mobile-first design for patient accessibility across devices |
+* **Service Integration:** Centralized directory for medical and digital services.
+* **Resource Repository:** Structured access to public health information.
+* **Schedule Viewer:** Real-time display of department and staff availability.
+* **Responsive UI:** Optimized for patient accessibility on all mobile devices.
 
 ---
 
-### System Implementation
-| Step | Action | Command |
-| :--- | :--- | :--- |
-| 1 | **Clone Repository** | `git clone https://github.com/Ratchanon2318/kppmch-service-hub.git` |
-| 2 | **Install Dependencies** | `npm install` |
-| 3 | **Production Build** | `npm run build` |
-| 4 | **Execute Development** | `npm run dev` |
+### Installation & Setup
+1. **Clone Repository:** `git clone https://github.com/ratchanon-noknoy2318/hospital-service-hub.git`
+2. **Install Dependencies:** `npm install`
+3. **Local Development:** `npm run dev`
+4. **Production Build:** `npm run build`
 
 ---
 
-### License Specification
-| Attribute | Detail |
-| :--- | :--- |
-| **License Type** | MIT License |
-| **Copyright Holder** | Ratchanon Noknoy |
-| **Notice** | Standard terms for liability limitation and permission grant |
+### Contact & Support
+**Ratchanon Noknoy** (Software Engineer)  
+[LinkedIn](https://www.linkedin.com/in/ratchanon-noknoy/) | [GitHub](https://github.com/ratchanon-noknoy2318)
 
----
-
-### Professional Contact
-| Channel | Detail |
-| :--- | :--- |
-| **Software Engineer** | Ratchanon Noknoy |
-| **LinkedIn** | [linkedin.com/in/ratchanon-noknoy](https://www.linkedin.com/in/ratchanon-noknoy/) |
-| **Portfolio** | [ratchanonnoknoy.vercel.app](https://ratchanonnoknoy.vercel.app/) |
+*Under MIT License | Copyright (c) 2026 Ratchanon Noknoy*
