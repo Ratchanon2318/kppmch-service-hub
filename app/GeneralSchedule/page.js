@@ -57,7 +57,7 @@ export default function SimpleTablePage() {
                 {/* 
                   ส่วนหัวข้อของหน้า
                 */}
-                <h1 className={styles.title}>ตารางการให้บริการ</h1>
+                <h1 className={styles.title}>ตารางบริการตรวจโรคทั่วไป</h1>
                 <h2 className={styles.title2}>
                     โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร โทร. 055-716715 |<span className={styles.lineLink}> ID Line @133rkonx</span>
                 </h2>
@@ -160,7 +160,7 @@ export default function SimpleTablePage() {
                 <div className={styles.mapButtonWrapper}>
                     <div className={styles.mapButtonContainer}>
                         <a
-                            href="https://maps.app.goo.gl/PGNtguEKEg5Wi7246"
+                            href="https://www.google.com/maps/place/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%8A%E0%B8%99+%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B3%E0%B9%81%E0%B8%9E%E0%B8%87%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3/@16.4782626,99.5261356,685m/data=!3m1!1e3!4m6!3m5!1s0x30de186b88443659:0x8a986d2f46f070b1!8m2!3d16.4783449!4d99.5282277!16s%2Fg%2F1td5tll9!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.buttonPrimaryFull}

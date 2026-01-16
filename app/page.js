@@ -41,6 +41,7 @@ export default function HomePage() {
             height={500}
             className={styles.heroImage}
             priority // `priority` บอกให้ Next.js โหลดรูปนี้ก่อน เพราะเป็นส่วนสำคัญที่ผู้ใช้เห็นเป็นอันดับแรก
+            sizes="(max-width: 768px) 100vw, 50vw" // SEO: ช่วยให้ browser โหลดรูปขนาดที่เหมาะสมกับหน้าจอ (Core Web Vitals)
           />
           <div className={styles.heroImageCaption}>
             <p><strong>นางสาวพิชญา หงษ์สุตะเมธี</strong></p>
@@ -53,7 +54,7 @@ export default function HomePage() {
           <p>
             เรามุ่งมั่นให้บริการดูแลสุขภาพที่ครอบคลุมแก่ประชาชนในพื้นที่ ด้วยเทคโนโลยีที่ทันสมัยและทีมบุคลากรทางการแพทย์ผู้เชี่ยวชาญ เพื่อสร้างประสบการณ์ที่ดีและไร้ความกังวลสำหรับทุกคนในครอบครัว
           </p>
-          <Link href="/About" className={styles.button}>เกี่ยวกับเรา</Link>
+          <Link href="/About" className={styles.button} aria-label="อ่านข้อมูลเพิ่มเติมเกี่ยวกับเรา">เกี่ยวกับเรา</Link>
         </motion.div>
 
       </motion.header>
@@ -112,7 +113,7 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Image src="/value/value-1.jpg" alt="เทคโนโลยีทางการแพทย์ที่ทันสมัย" width={300} height={200} />
+            <Image src="/value/value-1.jpg" alt="เทคโนโลยีทางการแพทย์ที่ทันสมัย" width={300} height={200} sizes="(max-width: 768px) 100vw, 33vw" />
             <h3>เทคโนโลยีที่ทันสมัย</h3>
             <p>อุปกรณ์ที่ล้ำสมัยช่วยให้การวินิจฉัยและรักษามีความแม่นยำและสะดวกสบาย</p>
           </motion.div>
@@ -123,7 +124,7 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Image src="/value/value-2.jpg" alt="การดูแลด้วยใจ" width={300} height={200} />
+            <Image src="/value/value-2.jpg" alt="การดูแลด้วยใจ" width={300} height={200} sizes="(max-width: 768px) 100vw, 33vw" />
             <h3>การดูแลด้วยใจ</h3>
             <p>เรามุ่งมั่นที่จะทำให้การมาโรงพยาบาลของท่านเป็นไปอย่างราบรื่นและน่าประทับใจ</p>
           </motion.div>
@@ -134,7 +135,7 @@ export default function HomePage() {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <Image src="/value/value-3.jpg" alt="สถานพยาบาลที่สะอาดและปลอดภัย" width={300} height={200} />
+            <Image src="/value/value-3.jpg" alt="สถานพยาบาลที่สะอาดและปลอดภัย" width={300} height={200} sizes="(max-width: 768px) 100vw, 33vw" />
             <h3>สะอาดและปลอดภัย</h3>
             <p>ความปลอดภัยคือสิ่งที่เรายึดมั่น สถานพยาบาลของเรามีมาตรฐานความสะอาดสูงสุด</p>
           </motion.div>
@@ -164,7 +165,7 @@ export default function HomePage() {
               <li><Link href="/GeneralSchedule">ตรวจรักษาโรคทั่วไป</Link></li>
               <li><Link href="/HealthSchedule">แพทย์แผนจีน (ฝังเข็ม)</Link></li>
               <li><Link href="/Thai&AltSchedule">แพทย์แผนไทย</Link></li>
-              <li><Link href="https://kppmch-register.vercel.app/PatientRegister" target="_blank" rel="noopener noreferrer">บริการการแพทย์ทางไกล (Telemedicine)</Link></li>
+              <li><Link href="https://kppmch-register.vercel.app/" target="_blank" rel="noopener noreferrer">บริการการแพทย์ทางไกล (Telemedicine)</Link></li>
               <li><Link href="https://kppmch-pregnant.vercel.app/" target="_blank" rel="noopener noreferrer">คลินิกฝากครรภ์</Link></li>
             </ul>
             <ul>
@@ -183,6 +184,7 @@ export default function HomePage() {
             width={400}
             height={550}
             className={styles.servicesImage}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
       </motion.section>
@@ -240,6 +242,8 @@ export default function HomePage() {
               <button
                 onClick={() => toggleFaq(faq.id)}
                 className={styles.faqQuestionButton}
+                aria-expanded={openFaqId === faq.id}
+                aria-controls={`faq-answer-${faq.id}`}
               >
                 <span>{faq.question}</span>
                 <svg
@@ -248,11 +252,15 @@ export default function HomePage() {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </button>
-              <div className={`${styles.faqAnswerContainer} ${openFaqId === faq.id ? styles.faqAnswerContainerOpen : ''}`}>
+              <div 
+                id={`faq-answer-${faq.id}`}
+                className={`${styles.faqAnswerContainer} ${openFaqId === faq.id ? styles.faqAnswerContainerOpen : ''}`}
+              >
                 <div className={styles.faqAnswer}>{faq.answer}</div>
               </div>
             </div>
@@ -271,7 +279,7 @@ export default function HomePage() {
         - แสดงข้อมูลการติดต่อที่สำคัญทั้งหมด เช่น เบอร์โทร, อีเมล, ที่อยู่, และโซเชียลมีเดีย
         - มีรูปภาพประกอบเพื่อความสวยงาม
       */}
-      <motion.footer 
+      <motion.section 
         id="contact" 
         className={`${styles.contact} ${styles.gridTwoCols}`}
         initial={{ opacity: 0 }}
@@ -286,18 +294,23 @@ export default function HomePage() {
             width={400}
             height={550}
             className={styles.contactImage}
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
         <div className={styles.contactInfo}>
           <h2>ติดต่อเรา</h2>
-          <p><strong>โทรศัพท์:</strong> 055-716715</p>
-          <p><strong>อีเมล:</strong> prathomhealth@gmail.com</p>
-          <p><strong>ที่อยู่:</strong> 35 ซ.2 ถ.ราชดำเนิน 1 ต.ในเมือง อ.เมืองกำแพงเพชร จ.กำแพงเพชร 62000</p>
-          <a href="https://www.facebook.com/kmch.kpp" target="_blank" rel="noopener noreferrer"><p><strong>Facebook:</strong> โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร</p></a>
-          <a href="https://lin.ee/ZU1yyCD" target="_blank" rel="noopener noreferrer"><p><strong>LINE:</strong> @133rkonx</p></a>
-          <p><strong>เวลา:</strong> ในวัน-เวลาราชการเท่านั้น</p>
+          <address style={{ fontStyle: 'normal' }}>
+            <p><strong>โทรศัพท์:</strong> <a href="tel:055716715" className={styles.contactLink}>055-716-715</a></p>
+            <p><strong>อีเมล:</strong> <a href="mailto:prathomhealth@gmail.com" className={styles.contactLink}>prathomhealth@gmail.com</a></p>
+            <p><strong>ที่อยู่:</strong> <a href="https://maps.app.goo.gl/dapP53qvxXsBAdD7A" target="_blank" rel="noopener noreferrer" className={styles.contactLink}>35 ซ.2 ถ.ราชดำเนิน 1 ต.ในเมือง อ.เมืองกำแพงเพชร จ.กำแพงเพชร 62000 (ซอยหลังวัดคูยาง)</a></p>
+            <a href="https://www.facebook.com/kmch.kpp" target="_blank" rel="noopener noreferrer" className={styles.contactLink}><p><strong>Facebook:</strong> โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร</p></a>
+            <a href="https://lin.ee/ZU1yyCD" target="_blank" rel="noopener noreferrer" className={styles.contactLink}><p><strong>LINE:</strong> @133rkonx</p></a>
+            <a href="https://www.facebook.com/share/r/19nveSEDTE/" target="_blank" rel="noopener noreferrer" className={styles.contactLink} title="เป็นกำลังใจให้นะคะ"><p><strong>Vlog:</strong> ชมวิดีโอแนะนำโรงพยาบาล</p></a>
+            <p><strong>เวลาทำการ:</strong> จันทร์ - ศุกร์ 08.30 - 16.30 น. <span style={{ color: 'red' }}>(ยกเว้นวันหยุดนักขัตฤกษ์)</span></p>
+            <a href="https://www.infoquest.co.th/holidays" target="_blank" rel="noopener noreferrer" className={styles.contactLink}><p><strong>ปฏิทิน:</strong> ตารางวันหยุดราชการ</p></a>
+          </address>
         </div>
-      </motion.footer>
+      </motion.section>
     </main>
   );
 }

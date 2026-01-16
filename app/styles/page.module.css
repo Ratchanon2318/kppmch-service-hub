@@ -11,7 +11,7 @@
 .hero {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 4rem;
+  padding: 8rem 4rem 4rem 4rem; /* เพิ่ม padding ด้านบนสำหรับ Navbar */
 }
 /* ส่วนข้อความใน Hero Section */
 .heroText {
@@ -293,6 +293,16 @@
   flex-direction: column;
   justify-content: center;
 }
+/* สไตล์สำหรับลิงก์ในส่วนติดต่อเรา */
+.contactLink {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease-in-out;
+}
+.contactLink:hover {
+  color: var(--color-primary); /* เปลี่ยนเป็นสีหลักเมื่อ Hover */
+  text-decoration: underline;
+}
 /* Container สำหรับรูปภาพประกอบ */
 .contactImageContainer {
   width: 100%;
@@ -328,7 +338,7 @@
     grid-template-columns: 1fr;
   }
   /* ปรับ padding และการจัดเรียงใน Hero Section */
-  .hero { padding: 2rem; }
+  .hero { padding: 6rem 2rem 2rem 2rem; } /* ปรับ padding ด้านบนสำหรับมือถือ */
   .heroText { text-align: left; padding: 0;}
   /* สลับลำดับของรูปภาพและเนื้อหาใน Services และ Contact Section */
   .servicesImageContainer, .contactImageContainer {

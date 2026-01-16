@@ -1,5 +1,3 @@
-'use client'; // Required for useState and onClick handlers
-
 import React from 'react';
 import Image from 'next/image';
 import styles from './page.module.css'; // Import local styles for this page
@@ -53,7 +51,7 @@ export default function SimpleTablePage() {
                 {/* 
                   ส่วนหัวข้อของหน้า
                 */}
-                <h1 className={styles.title}>ตารางการให้บริการแพทย์แผนไทย และแพทย์ทางเลือก</h1>
+                <h1 className={styles.title}>ตารางบริการแพทย์แผนไทยและทางเลือก</h1>
                 <h2 className={styles.title2}>ณ ศูนย์พัฒนาคุณภาพชีวิตและส่งเสริมอาชีพผู้สูงอายุ เทศบาลเมืองกำแพงเพชร</h2>
                 <h2 className={styles.title2}>โทร. 055-714924 สำหรับติดต่อสอบถามและจองคิว</h2>
 

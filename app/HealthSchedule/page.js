@@ -59,7 +59,7 @@ export default function SimpleTablePage() {
                 {/* 
                   ส่วนหัวข้อของหน้า
                 */}
-                <h1 className={styles.title}>ตารางการให้บริการแพทย์แผนไทย แพทย์แผนจีน และแพทย์ทางเลือก</h1>
+                <h1 className={styles.title}>ตารางบริการแพทย์แผนไทย,จีน และทางเลือก</h1>
                 <h2 className={styles.title2}>ณ ศูนย์บริการแพทย์แผนไทย โรงพยาบาลชุมชนเทศบาลเมืองกำแพงเพชร</h2>
                 <h2 className={styles.title2}>โทร. 055-714924 สำหรับติดต่อสอบถามและจองคิว</h2>
 
