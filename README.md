@@ -1,54 +1,35 @@
 # KPPMCH Service Hub (Digital Gateway)
 
-This platform serves as a centralized digital portal developed for Kamphaeng Phet Municipal Community Hospital. It is engineered as a "Digital Front Door" to provide the public with seamless access to medical schedules, specialized clinical services, and telemedicine integration.
+**Integrated Service Orchestration | Nurse-Led Medical Roster | Edge-Optimized Performance**
+
+An enterprise-grade digital portal engineered for **Kamphaeng Phet Municipal Community Hospital**. This "Digital Front Door" orchestrates clinical schedules, specialized medical services, and telemedicine integration into a single, user-centric mobile interface.
 
 ---
 
-## Strategic Value
+## 1. System Architecture: Nurse-to-Patient Pipeline
 
-The system was architected to modernize public healthcare accessibility, eliminating manual inquiries and streamlining the patient journey from home to hospital.
+The system utilizes a **Decoupled Architecture** that empowers clinical staff to manage rosters via Google Workspace, while Vercel Edge handles high-performance delivery and automated LINE Flex Message responses.
 
-| Core Challenge | Engineering Solution | Business & Patient Impact |
-| :--- | :--- | :--- |
-| **Schedule Fragmentation** | Dynamic Service Rosters | Real-time visibility of General Practice and NCD clinic availability. |
-| **Service Inaccessibility** | Digital Service Routing | Efficient navigation for specialized services like Physical Therapy and Vaccines. |
-| **Registration Barriers** | LINE OA Integration | Automated onboarding for Telemedicine via the hospital’s official digital channel. |
 
----
+```mermaid
+graph TD
+    %% 1. Input Layer (Nurse-Validated)
+    subgraph Nurse_Operations [1. Clinical Administration]
+        Nurse[Nurse Leader / Staff] -->|Direct Update| Doc[Google Doc / Sheet Roster]
+    end
 
-## Key Features
+    %% 2. Orchestration & Edge Layer
+    subgraph Edge_Infrastructure [2. Vercel Edge Network]
+        Doc -.->|Data Synchronization| Vercel[Vercel Global Edge Store]
+        Vercel -->|3. UI Interaction| WebApp[Next.js Gateway App]
+        WebApp -->|4. Real-time View| User[Patient / Citizen]
+        Vercel -->|5. Webhook Trigger| LINE_API[LINE Messaging API]
+        LINE_API -->|6. Flex Message Response| User
+    end
 
-* **Dynamic Medical Rosters:** Comprehensive display of morning and afternoon shifts, ensuring data accuracy for patient planning.
-* **Specialized Care Navigation:** Dedicated routing for Thai Traditional Medicine, Chinese Medicine, and Antenatal Care (ANC).
-* **Telemedicine Onboarding:** Seamless transition to the hospital's LINE Official Account for remote consultations.
-* **Accessibility-First Design:** Optimized UI and simplified navigation paths for elderly demographics and mobile users.
-
----
-
-## Technical Stack
-
-| Component | Technology |
-| :--- | :--- |
-| **Frontend Framework** | Next.js (App Router) |
-| **Real-time Integration** | LINE Messaging API |
-| **Deployment & Infrastructure** | Vercel (Optimized for edge performance) |
-| **Environment Management** | Professional-grade CI/CD Workflows |
-
----
-
-## Engineering Highlights
-
-* **High Availability:** Built for reliable public access, ensuring fast load times during peak morning registration hours.
-* **Mobile-First Architecture:** Optimized for the 90%+ of users who access hospital services via smartphones.
-* **Domain-Driven Design:** Structured to mirror actual hospital workflows, allowing non-technical staff to manage service updates efficiently.
-* **Performance Optimization:** Leverages Server-Side Rendering (SSR) and Static Generation to ensure immediate accessibility.
-
----
-
-## Development Setup
-
-To initialize the project environment locally:
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/ratchanon-noknoy2318/kppmch-service.git](https://github.com/ratchanon-noknoy2318/kppmch-service.git)
+    %% Visual Styling
+    style Doc fill:#4285F4,color:#fff,stroke:#333
+    style Vercel fill:#000,color:#fff,stroke:#333,stroke-width:2px
+    style WebApp fill:#f9f,stroke:#333
+    style User fill:#007bff,color:#fff
+    style LINE_API fill:#28a745,color:#fff
