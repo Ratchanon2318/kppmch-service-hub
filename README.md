@@ -1,5 +1,10 @@
-# KPPMCH Service Hub  
+# Hospital Service Hub  
 Centralized hospital service platform
+
+---
+
+## Architecture
+SSR/SSG Next.js application → component-based UI → Vercel Edge deployment  
 
 ---
 
@@ -12,13 +17,3 @@ Centralized hospital service platform
 
 ## Stack
 Next.js · React · CSS Modules · Vercel  
-
----
-
-## Architecture
-SSR/SSG frontend → Component-based UI → Edge deployment (Vercel)  
-
----
-
-## Demo
-https://kppmch-service.vercel.app/
